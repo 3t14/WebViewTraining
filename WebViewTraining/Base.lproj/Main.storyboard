@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebViewTraining" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,40 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bG-Vd-UxA">
+                                <rect key="frame" x="16" y="61" width="568" height="552"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ym-AX-kTP">
+                                <rect key="frame" x="16" y="11" width="104" height="50"/>
+                                <state key="normal" title="Call JavaScript">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="callJavaScriptAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="toR-9h-0rn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2bG-Vd-UxA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2B3-l6-7Zq"/>
+                            <constraint firstAttribute="bottom" secondItem="2bG-Vd-UxA" secondAttribute="bottom" constant="-13" id="6ar-m2-P7b"/>
+                            <constraint firstItem="2bG-Vd-UxA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="SgR-3a-dmu"/>
+                            <constraint firstItem="3Ym-AX-kTP" firstAttribute="leading" secondItem="2bG-Vd-UxA" secondAttribute="leading" id="TFy-DY-LQf"/>
+                            <constraint firstItem="2bG-Vd-UxA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="evt-8Y-7IJ"/>
+                            <constraint firstItem="3Ym-AX-kTP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="11" id="kKX-nc-yvU"/>
+                            <constraint firstItem="2bG-Vd-UxA" firstAttribute="top" secondItem="3Ym-AX-kTP" secondAttribute="bottom" id="rAm-g3-pWj"/>
+                            <constraint firstItem="2bG-Vd-UxA" firstAttribute="top" secondItem="3Ym-AX-kTP" secondAttribute="bottom" id="vZk-Tc-GL9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="2bG-Vd-UxA" id="eRm-i0-rM7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="348" y="311"/>
         </scene>
     </scenes>
 </document>
